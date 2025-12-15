@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_fun.c                                         :+:      :+:    :+:   */
+/*   list_helper_fun2.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/08 12:26:00 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/13 15:47:11 by amufleh          ###   ########.fr       */
+/*   Created: 2025/12/15 10:35:06 by amufleh           #+#    #+#             */
+/*   Updated: 2025/12/15 10:38:23 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,26 +36,26 @@ int	ft_lstsize(t_list *lst)
 	}
 	return (i);
 }
-// void	ft_lstdelone(t_list *lst, void (*del)(void*))
-// {
-// 	if (!lst || !del)
-// 		return ;
-// 	del(lst -> content);
-// 	free(lst);
-// }
 
-// void	ft_lstclear(t_list **lst, void (*del)(void*))
-// {
-// 	t_list	*temp;
+void	ft_lstdelone(t_list *lst, void (*del)(void*))
+{
+	if (!lst || !del)
+		return ;
+	free(lst);
+}
 
-// 	while (*lst)
-// 	{
-// 		temp = (*lst)-> next;
-// 		ft_lstdelone(*lst, del);
-// 		*lst = temp;
-// 	}
-// 	*lst = 0;
-// }
+void	ft_lstclear(t_list **lst, void (*del)(void*))
+{
+	t_list	*temp;
+
+	while (*lst)
+	{
+		temp = (*lst)-> next;
+		ft_lstdelone(*lst, del);
+		*lst = temp;
+	}
+	*lst = 0;
+}
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
@@ -71,36 +71,3 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
 	temp = ft_lstlast(*lst);
 	temp -> next = new;
 }
-
-void	ft_lstadd_front(t_list **lst, t_list *new)
-{
-	if (!lst || !new)
-		return ;
-	new -> next = *lst;
-	*lst = new;
-}
-
-t_list	*ft_lstlast(t_list *lst)
-{
-	int	i;
-
-	if (!lst)
-		return (NULL);
-	i = ft_lstsize(lst) - 1;
-	while (i--)
-		lst = lst ->next;
-	return (lst);
-}
-
-void	ft_lstiter(t_list *lst, void (*f)(int))
-{
-	if (!lst || !f)
-		return ;
-	while (lst)
-	{
-		f(lst -> content);
-		lst = lst -> next;
-	}
-}
-
-

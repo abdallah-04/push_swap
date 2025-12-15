@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:23:03 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/13 15:47:05 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/15 10:43:19 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,10 +28,17 @@ typedef struct s_list
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
+int	ft_strlen(char *str);
+int	push(t_list **list, int num);
+int	custom_atoi(const char *nptr);
+int	is_unique(t_list *list, int num);
+int	is_zero(char *str);
+int	input_validation(t_list **list, int argc, char *argv[]);
+void	print(int num);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
-// void	ft_lstdelone(t_list *lst, void (*del)(void*));
-// void	ft_lstclear(t_list **lst, void (*del)(void*));
+void	ft_lstdelone(t_list *lst, void (*del)(void*));
+void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(int));
 
 

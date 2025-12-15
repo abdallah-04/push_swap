@@ -6,40 +6,39 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:22:28 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/13 17:51:28 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/15 10:43:33 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	is_number(char *nptr)
+int	custom_atoi(const char *nptr)
 {
-	int	i;
-	int	si;
+	int		i;
+	int		sign;
 	long	num;
 
 	i = 0;
-	si = 1;
+	sign = 1;
 	num = 0;
 	if (!nptr || !nptr[0])
 		return (0);
-	if (nptr[i] == '-' || nptr[i] == '+')
+	if (nptr[i] == '+' || nptr[i] == '-')
 	{
 		if (nptr[i] == '-')
-			si = -1;
+			sign = -1;
 		i++;
 	}
 	while (nptr[i])
 	{
-		if (!(nptr[i] >= '0' && nptr[i] <= '9'))
-			return 0;
+		if (nptr[i] < '0' || nptr[i] > '9')
+			return (0);
 		num = num * 10 + (nptr[i] - '0');
+		if ((num * sign > 2147483647) || (num * sign < -2147483648))
+			return (0);
 		i++;
 	}
-	num *= si;
-	if (num >= 2147483647 || num <= -2147483648)
-		return (0);
-	return (num);
+	return (num * sign);
 }
 
 int	is_unique(t_list *list, int num)
@@ -53,17 +52,13 @@ int	is_unique(t_list *list, int num)
 	return (1);
 }
 
-int	push(t_list **list, int num)
+int	is_zero(char *str)
 {
-	t_list	*node;
-
-	if (!list)
+	if (!str)
 		return (0);
-	node = ft_lstnew(num);
-	if (!node)
-		return (0);
-	ft_lstadd_back(list, node);
-	return (1);
+	if (ft_strlen(str) == 1 && str[0] == '0')
+		return (1);
+	return (0);
 }
 
 int	input_validation(t_list **list, int argc, char *argv[])
@@ -71,12 +66,17 @@ int	input_validation(t_list **list, int argc, char *argv[])
 	int	i;
 	int	value;
 
+	if (argc < 2)
+		return (0);
 	i = 1;
 	while (i < argc)
 	{
-		if (!is_number(argv[i]))
-			return (0);
-		value = is_number(argv[i]);
+		value = custom_atoi(argv[i]);
+		if (!value)
+		{
+			if (!is_zero(argv[i]))
+				return (0);
+		}
 		if (!is_unique(*list, value))
 			return (0);
 		if (!push(list, value))
@@ -85,18 +85,13 @@ int	input_validation(t_list **list, int argc, char *argv[])
 	}
 	return (1);
 }
-print(int num)
-{
-	printf("%d ", num);
-}
-
 int	main(int argc, char *argv[])
 {
 	t_list	*list;
 
 	list = NULL;
-	if (!input_validation(&list, argc, argv))
-		return (1);
+	input_validation(&list, argc, argv);
 	ft_lstiter(list, print);
+	ft_lstclear(&list, free);
 	return (0);
 }
