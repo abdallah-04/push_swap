@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:23:03 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/15 10:43:19 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/15 14:27:43 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,10 @@
 # include <stdlib.h>
 # include <string.h>
 
+# define INT_MAX 2147483647
+# define INT_MIN -2147483648
+
+
 typedef struct s_list
 {
 	int	content;
@@ -27,6 +31,8 @@ typedef struct s_list
 
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
+t_list *insertion_sort(t_list *list);
+t_list *sort_insert(t_list *curr, t_list *sorted);
 int		ft_lstsize(t_list *lst);
 int	ft_strlen(char *str);
 int	push(t_list **list, int num);

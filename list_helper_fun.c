@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:26:00 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/15 10:36:10 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/15 11:27:32 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ int	push(t_list **list, int num)
 	node = ft_lstnew(num);
 	if (!node)
 		return (0);
-	ft_lstadd_back(list, node);
+	ft_lstadd_front(list, node);
 	return (1);
 }
 
