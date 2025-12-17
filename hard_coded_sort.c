@@ -1,44 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   utils.c                                            :+:      :+:    :+:   */
+/*   hard_coded_sort.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/12/15 10:32:27 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/17 12:19:01 by amufleh          ###   ########.fr       */
+/*   Created: 2025/12/17 14:30:22 by amufleh           #+#    #+#             */
+/*   Updated: 2025/12/17 14:34:23 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int	ft_strlen(char *str)
+void	mini_sort(t_list *stack_a, t_list *stack_b)
 {
-	int	i;
-
-	i = 0;
-	if (!str)
-		return (0);
-	while (str[i])
-		i++;
-	return (i);
+	
 }
-
-void	print(int num)
+void	sort_tow(t_list *stack_a, t_list *stack_b)
 {
-	printf("%d ", num);
-}
 
-int get_max(t_list *list)
-{
-	int max;
-
-	max = INT_MIN;
-	while (list)
-	{
-		if (list->content >= max)
-			max = list->content;
-		list = list->next;
-	}
-	return (max);
 }

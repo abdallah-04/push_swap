@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:23:03 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/15 14:27:43 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/17 12:15:10 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,12 @@
 typedef struct s_list
 {
 	int	content;
+	int	indx;
 	struct s_list	*next;
 }	t_list;
 
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
-t_list *insertion_sort(t_list *list);
-t_list *sort_insert(t_list *curr, t_list *sorted);
 int		ft_lstsize(t_list *lst);
 int	ft_strlen(char *str);
 int	push(t_list **list, int num);
@@ -40,6 +39,9 @@ int	custom_atoi(const char *nptr);
 int	is_unique(t_list *list, int num);
 int	is_zero(char *str);
 int	input_validation(t_list **list, int argc, char *argv[]);
+int	get_index(t_list *list, int value);
+int get_max(t_list *list);
+void	assign_indices(t_list *list);
 void	print(int num);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);

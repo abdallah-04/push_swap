@@ -6,66 +6,34 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 12:26:58 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/15 15:06:30 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/17 13:53:59 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "push_swap.h"
 
-int get_max(t_list *list, int num)
+int	get_index(t_list *list, int value)
 {
-	int max;
+	int	index;
 
-	max = INT_MIN;
+	index = 0;
 	while (list)
 	{
-		if (list->content >= num)
-			max = list->content;
+		if (list->content < value)
+			index++;
 		list = list->next;
 	}
-	return (max);
+	return (index);
 }
 
-t_list *sort_insert(t_list *curr, t_list *sorted)
+void	assign_indices(t_list *list)
 {
-	t_list *temp;
+	t_list	*tmp;
 
-	if (!sorted || curr->content < sorted->content)
+	tmp = list;
+	while (tmp)
 	{
-		curr->next = sorted;
-		return (curr);
+		tmp->indx = get_index(list, tmp->content);
+		tmp = tmp->next;
 	}
-	temp = sorted;
-	while (temp->next
-		&& temp->next->content < curr->content)
-		temp = temp->next;
-	curr->next = temp->next;
-	temp->next = curr;
-	return (sorted);
 }
-
-t_list *insertion_sort(t_list *list)
-{
-	t_list *sorted;
-	t_list *curr;
-	t_list *next;
-
-	sorted = NULL;
-	curr = list;
-	while (curr)
-	{
-		next = curr->next;
-		curr->next = NULL;
-		sorted = sort_insert(curr, sorted);
-		curr = next;
-	}
-	return (sorted);
-}
-
-// void sort_array(t_list *list)
-// {
-// 	t_list *sorted;
-
-// 	sorted = list;
-// 	sorted = insertion_sort(list);
-// }

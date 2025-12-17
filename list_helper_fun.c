@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:26:00 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/15 11:27:32 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/17 12:22:58 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,7 +38,7 @@ void	ft_lstiter(t_list *lst, void (*f)(int))
 		return ;
 	while (lst)
 	{
-		f(lst -> content);
+		f(lst -> indx);
 		lst = lst -> next;
 	}
 }

@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:22:28 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/15 15:45:10 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/17 13:53:33 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,38 +84,4 @@ int	input_validation(t_list **list, int argc, char *argv[])
 		i++;
 	}
 	return (1);
-}
-
-t_list *deep_copy(t_list *list_to_copy)
-{
-	t_list *temp;
-	t_list *node;
-	t_list *list;
-
-	list = NULL;
-	node = NULL;
-	temp = list_to_copy;
-	while (temp)
-	{
-		node = ft_lstnew(temp -> content);
-		ft_lstadd_back(&list, node);
-		free(node);
-		temp = temp -> next;
-	}
-	return (list);
-}
-int	main(int argc, char *argv[])
-{
-	t_list	*stack_a;
-	t_list	*sorted_list;
-
-	stack_a = NULL;
-	input_validation(&stack_a, argc, argv);
-	sorted_list = deep_copy(stack_a);
-	insertion_sort(sorted_list);
-	ft_lstiter(sorted_list, print);
-	ft_lstiter(stack_a, print);
-	ft_lstclear(&stack_a, free);
-	//ft_lstclear(&sorted_list, free);
-	return (0);
 }
