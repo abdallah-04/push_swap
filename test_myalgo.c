@@ -33,7 +33,7 @@ void	assign_indices(t_list *list)
 	tmp = list;
 	while (tmp)
 	{
-		tmp->indx = get_index(list, tmp->content);
+		tmp->index = get_index(list, tmp->content);
 		tmp = tmp->next;
 	}
 }

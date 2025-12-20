@@ -38,7 +38,7 @@ void	ft_lstiter(t_list *lst, void (*f)(int))
 		return ;
 	while (lst)
 	{
-		f(lst -> indx);
+		f(lst -> content);
 		lst = lst -> next;
 	}
 }
@@ -52,7 +52,7 @@ int	push(t_list **list, int num)
 	node = ft_lstnew(num);
 	if (!node)
 		return (0);
-	ft_lstadd_front(list, node);
+	ft_lstadd_back(list, node);
 	return (1);
 }
 

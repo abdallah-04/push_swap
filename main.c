@@ -37,29 +37,23 @@
 // 	return (list);
 // }
 
+
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
 	t_list	*stack_b;
-	// t_list	*copy;
 
 	stack_a = NULL;
 	stack_b = NULL;
 	input_validation(&stack_a, argc, argv);
-
-	printf("%d",stack_a->content);
-	// copy = deep_copy(stack_a);
-
 	assign_indices(stack_a);
-	ft_lstiter(stack_a, print);
-
 	if (ft_lstsize (stack_a) <= 5)
-		mini_sort(stack_a, stack_b);
-	else
-		regilar_sort(stack_a, stack_b);
+		mini_sort(&stack_a, &stack_b);
+	// else
+	// 	regilar_sort(stack_a, stack_b);
 
-	// ft_lstiter(copy, print);
+	ft_lstiter(stack_a, print);
 	ft_lstclear(&stack_a, free);
-	//ft_lstclear(&copy, free);
+	// ft_lstclear(&stack_b, free);
 	return (0);
 }

@@ -29,6 +29,10 @@ void	print(int num)
 	printf("%d ", num);
 }
 
+void	print_error()
+{
+	write(2, "Error\n", 7);
+}
 int get_max(t_list *list)
 {
 	int max;
@@ -42,3 +46,29 @@ int get_max(t_list *list)
 	}
 	return (max);
 }
+
+int	find_min(t_list *list)
+{
+	int min;
+	int index;
+	int i;
+
+	if (!list)
+		return (-1);
+
+	min = INT_MAX;
+	index = 0;
+	i = 1;
+	while (list)
+	{
+		if (list->content <= min)
+		{
+			min = list->content;
+			index = i;
+		}
+		list = list->next;
+		i++;
+	}
+	return (index);
+}
+

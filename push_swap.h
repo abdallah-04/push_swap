@@ -26,7 +26,7 @@
 typedef struct s_list
 {
 	int	content;
-	int	indx;
+	int	index;
 	struct s_list	*next;
 }	t_list;
 
@@ -41,6 +41,7 @@ int	is_zero(char *str);
 int	input_validation(t_list **list, int argc, char *argv[]);
 int	get_index(t_list *list, int value);
 int get_max(t_list *list);
+int find_min(t_list *list);
 void	assign_indices(t_list *list);
 void	print(int num);
 void	ft_lstadd_front(t_list **lst, t_list *new);
@@ -48,6 +49,13 @@ void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(int));
-
+void	swap_a(t_list *stack_a);
+void	reverse_rotate_a(t_list **stack_a);
+void	push_a(t_list **stack_a, t_list **stack_b);
+void	push_b(t_list **stack_a, t_list **stack_b);
+void	sort_three(t_list **stack_a);
+void	sort_four(t_list **stack_a, t_list **stack_b);
+void	sort_five(t_list **stack_a, t_list **stack_b);
+void	mini_sort(t_list **stack_a, t_list **stack_b);
 
 #endif

@@ -11,10 +11,12 @@
 # **************************************************************************** #
 
 SRC = input_validation.c \
-		list_helper_fun2.c \
-		list_helper_fun.c \
+		list_fun2.c \
+		list_fun1.c \
 		main.c \
-		utils.c
+		utils.c \
+		instructions.c \
+		hard_coded_sort.c
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror
