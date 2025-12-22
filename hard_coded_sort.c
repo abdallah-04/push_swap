@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:30:22 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/17 14:34:23 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/22 11:30:22 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,10 +41,7 @@ void	sort_three(t_list **stack_a)
 		reverse_rotate_a(stack_a);
 	}
 	else if ((*stack_a)->content > b && (*stack_a)->content > c && b < c)
-	{
-		reverse_rotate_a(stack_a);
-		reverse_rotate_a(stack_a);
-	}
+		rotate_a(stack_a);
 	else if ((*stack_a)->content < b && b > c && (*stack_a)->content > c)
 		reverse_rotate_a(stack_a);
 	else if ((*stack_a)->content > b && (*stack_a)->content < c)
@@ -56,74 +53,49 @@ void	sort_three(t_list **stack_a)
 	}
 }
 
-void sort_four(t_list **stack_a, t_list **stack_b)
+void	sort_four(t_list **stack_a, t_list **stack_b)
 {
-    int min_index;
+	int	min_index;
 
-    min_index = find_min(*stack_a);
-    if (min_index == 1)
-    {
-        push_b(stack_a, stack_b);
-        sort_three(stack_a);
-    }
-    else if (min_index == 2)
-    {
-        swap_a(*stack_a);
-        push_b(stack_a, stack_b);
-        sort_three(stack_a);
-    }
-    else if (min_index == 3)
-    {
-        reverse_rotate_a(stack_a);
-        reverse_rotate_a(stack_a);
-        push_b(stack_a, stack_b);
-        sort_three(stack_a);
-    }
-    else if (min_index == 4)
-    {
-        reverse_rotate_a(stack_a);
-        push_b(stack_a, stack_b);
-        sort_three(stack_a);
-    }
-    push_a(stack_a, stack_b);
+	min_index = find_min(*stack_a);
+	if (min_index == 1)
+		handel_index_one(stack_a, stack_b, 4);
+	else if (min_index == 2)
+		handel_index_tow(stack_a, stack_b, 4);
+	else if (min_index == 3)
+		handel_index_three(stack_a, stack_b, 4);
+	else if (min_index == 4)
+	{
+		reverse_rotate_a(stack_a);
+		push_b(stack_a, stack_b);
+		sort_three(stack_a);
+	}
+	push_a(stack_a, stack_b);
 }
 
-void sort_five(t_list **stack_a, t_list **stack_b)
+void	sort_five(t_list **stack_a, t_list **stack_b)
 {
-    int min_index;
+	int	min_index;
 
-    min_index = find_min(*stack_a);
-    if (min_index == 1)
-    {
-        push_b(stack_a, stack_b);
-        sort_four(stack_a, stack_b);
-    }
-    else if (min_index == 2)
-    {
-        swap_a(*stack_a);
-        push_b(stack_a, stack_b);
-        sort_four(stack_a, stack_b);
-    }
-    else if (min_index == 3)
-    {
-        reverse_rotate_a(stack_a);
-        reverse_rotate_a(stack_a);
-        reverse_rotate_a(stack_a);
-        push_b(stack_a, stack_b);
-        sort_four(stack_a, stack_b);
-    }
-    else if (min_index == 4)
-    {
-        reverse_rotate_a(stack_a);
-        reverse_rotate_a(stack_a);
-        push_b(stack_a, stack_b);
-        sort_four(stack_a, stack_b);
-    }
-    else if (min_index == 5)
-    {
-        reverse_rotate_a(stack_a);
-        push_b(stack_a, stack_b);
-        sort_four(stack_a, stack_b);
-    }
-    push_a(stack_a, stack_b);
+	min_index = find_min(*stack_a);
+	if (min_index == 1)
+		handel_index_one(stack_a, stack_b, 5);
+	else if (min_index == 2)
+		handel_index_tow(stack_a, stack_b, 5);
+	else if (min_index == 3)
+		handel_index_three(stack_a, stack_b, 5);
+	else if (min_index == 4)
+	{
+		reverse_rotate_a(stack_a);
+		reverse_rotate_a(stack_a);
+		push_b(stack_a, stack_b);
+		sort_four(stack_a, stack_b);
+	}
+	else if (min_index == 5)
+	{
+		reverse_rotate_a(stack_a);
+		push_b(stack_a, stack_b);
+		sort_four(stack_a, stack_b);
+	}
+	push_a(stack_a, stack_b);
 }

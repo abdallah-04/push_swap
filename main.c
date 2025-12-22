@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 13:52:17 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/17 14:27:48 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/22 10:50:27 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,6 @@
 // 	return (list);
 // }
 
-
 int	main(int argc, char **argv)
 {
 	t_list	*stack_a;
@@ -47,6 +46,7 @@ int	main(int argc, char **argv)
 	stack_b = NULL;
 	input_validation(&stack_a, argc, argv);
 	assign_indices(stack_a);
+
 	if (ft_lstsize (stack_a) <= 5)
 		mini_sort(&stack_a, &stack_b);
 	// else

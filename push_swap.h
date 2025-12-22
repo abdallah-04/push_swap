@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:23:03 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/17 12:15:10 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/22 11:19:12 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,11 +51,15 @@ void	ft_lstclear(t_list **lst, void (*del)(void*));
 void	ft_lstiter(t_list *lst, void (*f)(int));
 void	swap_a(t_list *stack_a);
 void	reverse_rotate_a(t_list **stack_a);
+void	rotate_a(t_list **stack_a);
 void	push_a(t_list **stack_a, t_list **stack_b);
 void	push_b(t_list **stack_a, t_list **stack_b);
+void	mini_sort(t_list **stack_a, t_list **stack_b);
 void	sort_three(t_list **stack_a);
 void	sort_four(t_list **stack_a, t_list **stack_b);
 void	sort_five(t_list **stack_a, t_list **stack_b);
-void	mini_sort(t_list **stack_a, t_list **stack_b);
+void	handel_index_one(t_list **stack_a, t_list **stack_b, int flage);
+void	handel_index_tow(t_list **stack_a, t_list **stack_b, int flage);
+void	handel_index_three(t_list **stack_a, t_list **stack_b, int flage);
 
 #endif
