@@ -6,7 +6,7 @@
 #    By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/12/17 13:57:49 by amufleh           #+#    #+#              #
-#    Updated: 2025/12/22 11:16:24 by amufleh          ###   ########.fr        #
+#    Updated: 2025/12/22 17:38:55 by amufleh          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,8 @@ SRC = input_validation.c \
 		utils.c \
 		instructions.c \
 		hard_coded_sort.c \
-		sort_by_index.c
+		sort_by_index.c \
+		radix_sort.c
 
 CC = cc
 CFLAGS = -Wall -Wextra -Werror

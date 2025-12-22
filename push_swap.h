@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:23:03 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/22 11:19:12 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/22 18:51:14 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,10 +40,11 @@ int	is_unique(t_list *list, int num);
 int	is_zero(char *str);
 int	input_validation(t_list **list, int argc, char *argv[]);
 int	get_index(t_list *list, int value);
-int get_max(t_list *list);
-int find_min(t_list *list);
+int	find_min(t_list *list);
+int	count_max_bit(t_list *stack_a);
+int	is_sorted(t_list *list);
 void	assign_indices(t_list *list);
-void	print(int num);
+void	ft_putnbr(int n);
 void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
@@ -61,5 +62,8 @@ void	sort_five(t_list **stack_a, t_list **stack_b);
 void	handel_index_one(t_list **stack_a, t_list **stack_b, int flage);
 void	handel_index_tow(t_list **stack_a, t_list **stack_b, int flage);
 void	handel_index_three(t_list **stack_a, t_list **stack_b, int flage);
+void	return_all_to_a(t_list **stack_a, t_list **stack_b);
+void	radix_sort(t_list **stack_a, t_list **stack_b);
+void	print_error();
 
 #endif

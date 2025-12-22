@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 11:22:28 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/17 13:53:33 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/22 19:04:31 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -85,3 +85,17 @@ int	input_validation(t_list **list, int argc, char *argv[])
 	}
 	return (1);
 }
+
+int is_sorted(t_list *list)
+{
+	if (!list || !list->next)
+		return (1);
+	while (list->next)
+	{
+		if (list->content > list->next->content)
+			return (0);
+		list = list->next;
+	}
+	return (1);
+}
+
