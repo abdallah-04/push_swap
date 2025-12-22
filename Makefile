@@ -15,6 +15,7 @@ SRC = input_validation.c \
 		list_fun1.c \
 		main.c \
 		utils.c \
+		utils2.c \
 		instructions.c \
 		hard_coded_sort.c \
 		sort_by_index.c \

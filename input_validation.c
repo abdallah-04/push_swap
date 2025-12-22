@@ -99,3 +99,4 @@ int is_sorted(t_list *list)
 	return (1);
 }
 
+

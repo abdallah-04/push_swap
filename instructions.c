@@ -21,7 +21,7 @@ void	swap_a(t_list *stack_a)
 	temp = stack_a -> content;
 	stack_a->content = stack_a->next->content;
 	stack_a->next->content = temp;
-	printf("sa\n");
+	ft_putstr_fd("sa\n", 1);
 }
 
 void	reverse_rotate_a(t_list **stack_a)
@@ -41,7 +41,7 @@ void	reverse_rotate_a(t_list **stack_a)
 	p_last->next = NULL;
 	last->next = *stack_a;
 	*stack_a = last;
-	printf("rra\n");
+	ft_putstr_fd("rra\n", 1);
 }
 
 void	push_a(t_list **stack_a, t_list **stack_b)
@@ -54,7 +54,7 @@ void	push_a(t_list **stack_a, t_list **stack_b)
 	*stack_b = tmp->next;
 	tmp->next = *stack_a;
 	*stack_a = tmp;
-	printf("pa\n");
+	ft_putstr_fd("pa\n", 1);
 }
 
 void	push_b(t_list **stack_a, t_list **stack_b)
@@ -67,7 +67,7 @@ void	push_b(t_list **stack_a, t_list **stack_b)
 	*stack_a = tmp->next;
 	tmp->next = *stack_b;
 	*stack_b = tmp;
-	printf("pb\n");
+	ft_putstr_fd("pb\n", 1);
 }
 
 void	rotate_a(t_list **stack_a)
@@ -82,5 +82,5 @@ void	rotate_a(t_list **stack_a)
 	*stack_a = first->next;
 	first->next = NULL;
 	last->next = first;
-	printf("ra\n");
+	ft_putstr_fd("ra\n", 1);
 }

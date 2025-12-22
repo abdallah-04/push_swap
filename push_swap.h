@@ -15,10 +15,7 @@
 # define PUSH_SWAP_H
 
 # include <unistd.h>
-# include <stdio.h>
 # include <stdlib.h>
-# include <string.h>
-
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
 
@@ -45,7 +42,6 @@ int	count_max_bit(t_list *stack_a);
 int	is_sorted(t_list *list);
 void	assign_indices(t_list *list);
 void	ft_putnbr(int n);
-void	ft_lstadd_front(t_list **lst, t_list *new);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
@@ -65,5 +61,7 @@ void	handel_index_three(t_list **stack_a, t_list **stack_b, int flage);
 void	return_all_to_a(t_list **stack_a, t_list **stack_b);
 void	radix_sort(t_list **stack_a, t_list **stack_b);
 void	print_error();
+void	ft_putnbr_nospace(int n);
+void	ft_putstr_fd(char *s, int fd);
 
 #endif
