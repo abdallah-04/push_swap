@@ -52,13 +52,12 @@ void	assign_indices(t_list *list)
 
 int	find_min(t_list *list)
 {
-	int min;
-	int index;
-	int i;
+	int	min;
+	int	index;
+	int	i;
 
 	if (!list)
 		return (-1);
-
 	min = INT_MAX;
 	index = 0;
 	i = 1;

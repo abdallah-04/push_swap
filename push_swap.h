@@ -10,15 +10,14 @@
 /*                                                                            */
 /* ************************************************************************** */
 
-
 #ifndef PUSH_SWAP_H
 # define PUSH_SWAP_H
 
 # include <unistd.h>
 # include <stdlib.h>
+
 # define INT_MAX 2147483647
 # define INT_MIN -2147483648
-
 
 typedef struct s_list
 {
@@ -30,16 +29,16 @@ typedef struct s_list
 t_list	*ft_lstlast(t_list *lst);
 t_list	*ft_lstnew(int content);
 int		ft_lstsize(t_list *lst);
-int	ft_strlen(char *str);
-int	push(t_list **list, int num);
-int	custom_atoi(const char *nptr);
-int	is_unique(t_list *list, int num);
-int	is_zero(char *str);
-int	input_validation(t_list **list, int argc, char *argv[]);
-int	get_index(t_list *list, int value);
-int	find_min(t_list *list);
-int	count_max_bit(t_list *stack_a);
-int	is_sorted(t_list *list);
+int		ft_strlen(char *str);
+int		push(t_list **list, int num);
+int		custom_atoi(const char *nptr);
+int		is_unique(t_list *list, int num);
+int		is_zero(char *str);
+int		input_validation(t_list **list, int argc, char *argv[]);
+int		get_index(t_list *list, int value);
+int		find_min(t_list *list);
+int		count_max_bit(t_list *stack_a);
+int		is_sorted(t_list *list);
 void	assign_indices(t_list *list);
 void	ft_putnbr(int n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
@@ -63,5 +62,4 @@ void	radix_sort(t_list **stack_a, t_list **stack_b);
 void	print_error();
 void	ft_putnbr_nospace(int n);
 void	ft_putstr_fd(char *s, int fd);
-
 #endif

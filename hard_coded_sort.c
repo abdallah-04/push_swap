@@ -30,23 +30,25 @@ void	mini_sort(t_list **stack_a, t_list **stack_b)
 
 void	sort_three(t_list **stack_a)
 {
+	int	a;
 	int	b;
 	int	c;
 
+	a = (*stack_a)->content;
 	b = (*stack_a)->next->content;
 	c = (*stack_a)->next->next->content;
-	if ((*stack_a)->content > b && b > c)
+	if (a > b && b > c)
 	{
 		swap_a(*stack_a);
 		reverse_rotate_a(stack_a);
 	}
-	else if ((*stack_a)->content > b && (*stack_a)->content > c && b < c)
+	else if (a > b && a > c && b < c)
 		rotate_a(stack_a);
-	else if ((*stack_a)->content < b && b > c && (*stack_a)->content > c)
+	else if (a < b && b > c && a > c)
 		reverse_rotate_a(stack_a);
-	else if ((*stack_a)->content > b && (*stack_a)->content < c)
+	else if (a > b && a < c)
 		swap_a(*stack_a);
-	else if ((*stack_a)->content < b && (*stack_a)->content < c && b > c)
+	else if (a < b && a < c && b > c)
 	{
 		reverse_rotate_a(stack_a);
 		swap_a(*stack_a);

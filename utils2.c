@@ -25,7 +25,7 @@ void	ft_putnbr_nospace(int n)
 
 void	print_error()
 {
-    ft_putstr_fd("Error\n", 2);
+	ft_putstr_fd("Error\n", 2);
 	exit(0);
 }
 

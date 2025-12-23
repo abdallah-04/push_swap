@@ -86,7 +86,7 @@ int	input_validation(t_list **list, int argc, char *argv[])
 	return (1);
 }
 
-int is_sorted(t_list *list)
+int	is_sorted(t_list *list)
 {
 	if (!list || !list->next)
 		return (1);
@@ -98,5 +98,3 @@ int is_sorted(t_list *list)
 	}
 	return (1);
 }
-
-

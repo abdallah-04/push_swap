@@ -47,5 +47,3 @@ int	push(t_list **list, int num)
 	ft_lstadd_back(list, node);
 	return (1);
 }
-
-

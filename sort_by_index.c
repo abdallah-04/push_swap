@@ -41,4 +41,3 @@ void	handel_index_three(t_list **stack_a, t_list **stack_b, int flage)
 	else if (flage == 5)
 		sort_four(stack_a, stack_b);
 }
-
