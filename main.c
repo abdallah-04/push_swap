@@ -36,7 +36,7 @@ int	main(int argc, char **argv)
 		mini_sort(&stack_a, &stack_b);
 	else
 		radix_sort(&stack_a, &stack_b);
-	ft_lstiter(stack_a, ft_putnbr);
+	//ft_lstiter(stack_a, ft_putnbr);
 	ft_lstclear(&stack_a, free);
 	return (0);
 }

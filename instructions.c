@@ -14,13 +14,17 @@
 
 void	swap_a(t_list *stack_a)
 {
-	int	temp;
+	int	temp_content;
+	int	temp_index;
 
 	if (!stack_a || !stack_a->next)
 		return;
-	temp = stack_a -> content;
+	temp_content = stack_a->content;
 	stack_a->content = stack_a->next->content;
-	stack_a->next->content = temp;
+	stack_a->next->content = temp_content;
+	temp_index = stack_a->index;
+	stack_a->index = stack_a->next->index;
+	stack_a->next->index = temp_index;
 	ft_putstr_fd("sa\n", 1);
 }
 
