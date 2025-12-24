@@ -18,7 +18,7 @@ void	swap_a(t_list *stack_a)
 	int	temp_index;
 
 	if (!stack_a || !stack_a->next)
-		return;
+		return ;
 	temp_content = stack_a->content;
 	stack_a->content = stack_a->next->content;
 	stack_a->next->content = temp_content;
@@ -34,7 +34,7 @@ void	reverse_rotate_a(t_list **stack_a)
 	t_list	*p_last;
 
 	if (!stack_a || !(*stack_a) || !(*stack_a)->next)
-		return;
+		return ;
 	p_last = NULL;
 	last = *stack_a;
 	while (last->next)
@@ -53,7 +53,7 @@ void	push_a(t_list **stack_a, t_list **stack_b)
 	t_list	*tmp;
 
 	if (!stack_b || !(*stack_b))
-		return;
+		return ;
 	tmp = *stack_b;
 	*stack_b = tmp->next;
 	tmp->next = *stack_a;
@@ -66,7 +66,7 @@ void	push_b(t_list **stack_a, t_list **stack_b)
 	t_list	*tmp;
 
 	if (!stack_a || !(*stack_a))
-		return;
+		return ;
 	tmp = *stack_a;
 	*stack_a = tmp->next;
 	tmp->next = *stack_b;
@@ -80,7 +80,7 @@ void	rotate_a(t_list **stack_a)
 	t_list	*last;
 
 	if (!stack_a || !(*stack_a) || !(*stack_a)->next)
-		return;
+		return ;
 	first = *stack_a;
 	last = ft_lstlast(*stack_a);
 	*stack_a = first->next;

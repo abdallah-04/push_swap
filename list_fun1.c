@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:26:00 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/22 16:46:26 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/24 09:45:36 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,15 +24,19 @@ t_list	*ft_lstlast(t_list *lst)
 	return (lst);
 }
 
-void	ft_lstiter(t_list *lst, void (*f)(int))
+void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	if (!lst || !f)
+	t_list	*temp;
+
+	if (!new)
 		return ;
-	while (lst)
+	if (!*lst)
 	{
-		f(lst -> content);
-		lst = lst -> next;
+		*lst = new;
+		return ;
 	}
+	temp = ft_lstlast(*lst);
+	temp -> next = new;
 }
 
 int	push(t_list **list, int num)

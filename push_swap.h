@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/08 12:23:03 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/22 18:51:14 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/24 09:41:53 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,9 +21,9 @@
 
 typedef struct s_list
 {
-	int	content;
-	int	index;
 	struct s_list	*next;
+	int				content;
+	int				index;
 }	t_list;
 
 t_list	*ft_lstlast(t_list *lst);
@@ -40,11 +40,9 @@ int		find_min(t_list *list);
 int		count_max_bit(t_list *stack_a);
 int		is_sorted(t_list *list);
 void	assign_indices(t_list *list);
-void	ft_putnbr(int n);
 void	ft_lstadd_back(t_list **lst, t_list *new);
 void	ft_lstdelone(t_list *lst, void (*del)(void*));
 void	ft_lstclear(t_list **lst, void (*del)(void*));
-void	ft_lstiter(t_list *lst, void (*f)(int));
 void	swap_a(t_list *stack_a);
 void	reverse_rotate_a(t_list **stack_a);
 void	rotate_a(t_list **stack_a);
@@ -59,7 +57,6 @@ void	handel_index_tow(t_list **stack_a, t_list **stack_b, int flage);
 void	handel_index_three(t_list **stack_a, t_list **stack_b, int flage);
 void	return_all_to_a(t_list **stack_a, t_list **stack_b);
 void	radix_sort(t_list **stack_a, t_list **stack_b);
-void	print_error();
-void	ft_putnbr_nospace(int n);
+void	print_error(void);
 void	ft_putstr_fd(char *s, int fd);
 #endif

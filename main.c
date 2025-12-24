@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 13:52:17 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/22 19:06:50 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/24 09:30:41 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,7 +36,6 @@ int	main(int argc, char **argv)
 		mini_sort(&stack_a, &stack_b);
 	else
 		radix_sort(&stack_a, &stack_b);
-	//ft_lstiter(stack_a, ft_putnbr);
 	ft_lstclear(&stack_a, free);
 	return (0);
 }

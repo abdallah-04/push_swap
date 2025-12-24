@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   list_helper_fun2.c                                 :+:      :+:    :+:   */
+/*   list_fun2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/15 10:35:06 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/15 10:38:23 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/24 09:45:21 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,19 +55,4 @@ void	ft_lstclear(t_list **lst, void (*del)(void*))
 		*lst = temp;
 	}
 	*lst = 0;
-}
-
-void	ft_lstadd_back(t_list **lst, t_list *new)
-{
-	t_list	*temp;
-
-	if (!new)
-		return ;
-	if (!*lst)
-	{
-		*lst = new;
-		return ;
-	}
-	temp = ft_lstlast(*lst);
-	temp -> next = new;
 }

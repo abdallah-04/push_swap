@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/22 12:43:28 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/22 17:34:19 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/24 09:34:02 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ void	radix_sort(t_list **stack_a, t_list **stack_b)
 	while (size)
 	{
 		size2 = ft_lstsize(*stack_a);
-		while(size2)
+		while (size2)
 		{
 			if ((((*stack_a)->index >> i) & 1) == 0)
 				push_b(stack_a, stack_b);

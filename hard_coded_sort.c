@@ -6,7 +6,7 @@
 /*   By: amufleh <amufleh@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/12/17 14:30:22 by amufleh           #+#    #+#             */
-/*   Updated: 2025/12/22 11:30:22 by amufleh          ###   ########.fr       */
+/*   Updated: 2025/12/24 09:30:25 by amufleh          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,6 @@ void	mini_sort(t_list **stack_a, t_list **stack_b)
 	else if (size == 5)
 		sort_five(stack_a, stack_b);
 }
-
 
 void	sort_three(t_list **stack_a)
 {
